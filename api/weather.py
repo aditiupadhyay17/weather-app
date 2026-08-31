@@ -68,9 +68,6 @@ def render_page(body: str) -> str:
             <button type="submit">Check</button>
         </form>
         {body}
-        <footer>Python + OpenWeatherMap REST API &middot;
-            <a href="https://github.com/aditiupadhyay17/weather-app" target="_blank">Source on GitHub</a>
-        </footer>
     </body>
     </html>
     """
