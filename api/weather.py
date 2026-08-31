@@ -1,11 +1,3 @@
-"""
-api/weather.py
----------------
-Same get_weather() logic as your original weather_app.py — the only
-difference is it's triggered by an HTTP GET request instead of terminal
-input(), and returns an HTML page instead of printing to console.
-"""
-
 import os
 from http.server import BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
@@ -16,7 +8,6 @@ BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 
 
 def get_weather(city: str, api_key: str) -> dict:
-    """Identical to weather_app.py — calls OpenWeatherMap and returns JSON."""
     params = {
         "q": city,
         "appid": api_key,
@@ -28,7 +19,6 @@ def get_weather(city: str, api_key: str) -> dict:
 
 
 def render_result(data: dict) -> str:
-    """Same fields as your display_weather() — built as a styled HTML block."""
     city = data["name"]
     country = data["sys"]["country"]
     temp = round(data["main"]["temp"])
@@ -65,7 +55,6 @@ def render_result(data: dict) -> str:
 
 
 def render_page(body: str) -> str:
-    """Dark, cinematic-styled page shell — matches the portfolio aesthetic."""
     return f"""
     <!DOCTYPE html>
     <html lang="en">
